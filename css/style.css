@@ -66,3 +66,7 @@ body {
   #links a:active {
     color: darkgreen;
   }
+
+  #talak {
+    font-size: 20px;
+  }
