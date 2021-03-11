@@ -64,9 +64,32 @@ body {
   }
 
   #links a:active {
-    color: darkgreen;
+    color: black;
   }
 
   #talak {
     font-size: 20px;
+  }
+
+  div.galeria {
+    margin: 5px;
+    border: 1px solid rgba(224, 224, 224, 0.815);
+    float: left;
+    width: 24%;
+    box-shadow: -1px 4px 5px 0px rgba(209, 205, 209, 1);
+  }
+  
+  div.galeria:hover {
+    border: 1px solid rgba(119, 119, 119, 0.856);
+    box-shadow: -1px 4px 5px 0px rgba(209, 205, 209, 1);
+  }
+  
+  div.galeria img {
+    width: 100%;
+  }
+
+  #kepek {
+    margin: auto;
+    width: 100%;
+    padding: 3px;
   }
