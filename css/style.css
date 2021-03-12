@@ -1,6 +1,7 @@
 body {
     margin: 0;
-    background-color: #e9ebee;
+    background-color: #e9e6d4;
+    margin: 0px 100px 50px 100px;
   }
   
   #navbar {
@@ -11,6 +12,9 @@ body {
     grid-gap: 1.5em;
     padding: 0 40px;
     box-shadow: -1px 4px 5px 0px rgba(209, 205, 209, 1);
+   /* top: 0;
+    position: fixed;
+    z-index: 100;*/
   }
   
   #logo {
@@ -93,3 +97,27 @@ body {
     width: 100%;
     padding: 3px;
   }
+
+.cimek{
+
+ /* background-color: rgb(202, 80, 80);
+  border-style: groove;
+  border-color: black;
+  border-radius: 15px;
+  height: 60px;
+  /*text-align: middle;
+  vertical-align: middle;*/
+  color: rgb(202, 80, 80);
+  
+}
+.arak{
+  text-align: end;
+  font-weight: bold;
+
+}
+
+.mertek{
+  text-align: end;
+  margin-left: -1000;
+  padding-left: 1000;
+}
