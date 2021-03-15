@@ -1,125 +1,128 @@
 body {
-    margin: 0;
-    background-color: #e9e6d4;
-    margin: 150px 100px 50px 100px; 
-  }
-  
-  #navbar {
-    display: grid;
-    min-height: 100px;
-    grid-auto-flow: column;
-    background-color: #fcfcfc;
-    grid-gap: 1.5em;
-    padding: 0 40px;
-    box-shadow: 0px 0px 10px 5px rgba(209, 205, 209, 1);
-    top: 0px;
-    position: fixed;
-    width: 85%;
-    z-index: 10;
-    border-color: black;
-    border-radius: 15px;
-  }
-  
+  margin: 0;
+  background-color: #e9e6d4;
+  margin: 0px 0px 50px 0px;
+}
 
-  
-  #logo {
-    display: grid;
-    justify-content: start;
-    align-content: center;
-    font-family: "Open Sans", sans-serif;
-    font-size: 30px;
-    font-weight: 700;
-    color: #000;
-    text-transform: uppercase;
-    width: 155px;
-  }
-  
-  .logo span {
-    color: #0474bc;
-  }
-  
-  #links {
-    display: grid;
-    justify-content: right;
-    align-content: center;
-    grid-auto-flow: column;
-    grid-gap: 1.5em;
-    font-family: "Open Sans", sans-serif;
-  }
-  
-  a {
-    text-decoration: none;
-    color: #333;
-  }
-  
-  a:hover {
-    color: #0474bc;
-  }
-  
-  #active-nav {
-      background-color: #c92a2a;
-      color: rgb(255, 255, 255);
-  }
+#navbar {
+  display: grid;
+  min-height: 100px;
+  grid-auto-flow: column;
+  background-color: #fcfcfc;
+  grid-gap: 1.5em;
+  padding: 0 40px;
+  box-shadow: -1px 4px 5px 0px rgba(209, 205, 209, 1);
+ /* top: 0;
+  position: fixed;
+  z-index: 100;*/
+}
 
-  #links a {
-    padding: 5px;
-    border: 1px solid white;
-    border-radius: 5px;
-    font-weight: bold;
-  }
+#logo {
+  display: grid;
+  justify-content: start;
+  align-content: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #000;
+  text-transform: uppercase;
+  width: 160px;
+}
 
-  #links a:hover {
-    color: rgb(255, 38, 0);
-  }
+.logo span {
+  color: #0474bc;
+}
 
-  #links a:active {
-    color: rgb(200, 255, 0);
-  }
+#links {
+  display: grid;
+  justify-content: right;
+  align-content: center;
+  grid-auto-flow: column;
+  grid-gap: 1.5em;
+  font-family: "Open Sans", sans-serif;
+}
 
-  #talak {
-    font-size: 20px;
-  }
+a {
+  text-decoration: none;
+  color: #333;
+}
 
-  div.galeria {
-    margin: 5px;
-    border: 1px solid rgba(224, 224, 224, 0.815);
-    float: left;
-    width: 24%;
-    box-shadow: -1px 4px 5px 0px rgba(209, 205, 209, 1);
-  }
-  
-  div.galeria:hover {
-    border: 1px solid rgba(119, 119, 119, 0.856);
-    box-shadow: -1px 4px 5px 0px rgba(209, 205, 209, 1);
-  }
-  
-  div.galeria img {
-    width: 100%;
-  }
+a:hover {
+  color: #0474bc;
+}
 
-  #kepek {
-    margin: auto;
-    width: 100%;
-    padding: 3px;
-  }
+#active-nav {
+  background-color: #c92a2a;
+  color: rgb(255, 255, 255);
+
+}
+#links a {
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+#links a:hover {
+  color: rgb(255, 38, 0);
+}
+
+#links a:active {
+  color: rgb(200, 255, 0);
+}
+
+#talak {
+  font-size: 20px;
+}
+
+div.galeria {
+  margin: 5px;
+  border: 1px solid rgba(224, 224, 224, 0.815);
+  float: left;
+  width: 24%;
+  box-shadow: -1px 4px 5px 0px rgba(209, 205, 209, 1);
+}
+
+div.galeria:hover {
+  border: 1px solid rgba(119, 119, 119, 0.856);
+  box-shadow: -1px 4px 5px 0px rgba(209, 205, 209, 1);
+}
+
+div.galeria img {
+  width: 100%;
+}
+
+#kepek {
+  margin: auto;
+  width: 100%;
+  padding: 3px;
+}
 
 .cimek{
   color: rgb(202, 80, 80);
   text-shadow: 1px 1px 5px grey;
 }
 .arak{
-  text-align: end;
+  text-align: right;
   font-weight: bold;
   font-size: 17px;
+  float: right;
+  padding-left: 30px;
 }
 
 .mertek{
-  text-align: end;
+  text-align: right;
   font-size: 17px;
   text-decoration: underline;
- 
+  float: right;
+  padding-left: 30px;
+}
+
+.main {
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 mark{
- background-color: rgb(208, 255, 0);
-}
+  background-color: rgb(208, 255, 0);
+ }
