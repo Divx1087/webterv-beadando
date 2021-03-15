@@ -37,6 +37,7 @@ body {
   grid-auto-flow: column;
   grid-gap: 1.5em;
   font-family: "Open Sans", sans-serif;
+  border: 1px solid white;
 }
 
 a {
@@ -51,8 +52,10 @@ a:hover {
 #active-nav {
   background-color: #c92a2a;
   color: rgb(255, 255, 255);
-
+  border-radius: 5px;
+  border: 1px solid white;
 }
+
 #links a {
   padding: 5px;
   border: 1px solid white;
@@ -61,11 +64,12 @@ a:hover {
 }
 
 #links a:hover {
-  color: rgb(255, 38, 0);
+  color: #e9e6d4bc;
+  background-color: darkred;
 }
 
 #links a:active {
-  color: rgb(200, 255, 0);
+  color: rgb(253, 255, 111);
 }
 
 #talak {
@@ -122,10 +126,10 @@ div.galeria img {
 
 mark{
   background-color: rgb(208, 255, 0);
- }
+}
 
 
- .dropbtn {
+.dropbtn {
   color: black;
   font-size: 16px;
   background-color: white;
@@ -141,6 +145,8 @@ mark{
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0);
 }
 
 .dropdown-content a {
@@ -159,5 +165,30 @@ mark{
 }
 
 .dropdown:hover .dropbtn {
-  color: darkred;
+  color: #e9e6d4bc;
+  background-color: darkred;
+  border-radius: 5px;
+}
+
+#login {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: auto;
+  margin-top: 20px;
+  max-width: 450px;
+  text-align: center;
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
+
+.login-table {
+  margin: auto;
+}
+
+.submit-btn {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: auto;
+  margin-right: auto;
 }
