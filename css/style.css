@@ -1,7 +1,9 @@
 body {
-  margin: 0;
   background-color: #e9e6d4;
-  margin: 0px 0px 50px 0px;
+  margin: 0px !important;
+  font-family: 'sofia-pro', sans-serif;
+  font-weight: 300;
+  height: 100%;
 }
 
 #navbar {
@@ -18,16 +20,9 @@ body {
   display: grid;
   justify-content: start;
   align-content: center;
-  font-family: "Open Sans", sans-serif;
-  font-size: 30px;
-  font-weight: 700;
   color: #000;
   text-transform: uppercase;
   width: 160px;
-}
-
-.logo span {
-  color: #0474bc;
 }
 
 #links {
@@ -36,7 +31,7 @@ body {
   align-content: center;
   grid-auto-flow: column;
   grid-gap: 1.5em;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'sofia-pro', sans-serif;
   border: 1px solid white;
 }
 
@@ -192,3 +187,51 @@ mark{
   margin-left: auto;
   margin-right: auto;
 }
+
+#global-footer {
+  padding-top: 75px;
+  padding-bottom: 65px;
+  color: black;
+  background-color: white;
+  position: relative;
+  width: 100%;
+  z-index: 10;
+  overflow: hidden;
+  left: 0;
+  bottom: 0;
+  font-size: 14px;
+}
+
+.legal {
+  margin-top: 30px;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+  opacity: .55;
+}
+
+.details {
+  text-align: left;
+  float: left;
+}
+
+.links {
+  float: right;
+}
+
+.col {
+  position: relative;
+  
+}
+
+.footer-table {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 0px;
+}
+
+.footer-table ul {
+  list-style-type:none;
+}
+

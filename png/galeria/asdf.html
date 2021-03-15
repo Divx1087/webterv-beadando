@@ -1,0 +1,37 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <title> 
+          Flex layout
+        </title>
+        <style>
+            html, 
+            body {
+                height: 100%;
+                margin: 0px !important;
+            }
+            .app {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                width: 100%;
+            }
+            .content {
+                flex-grow: 1;
+            }
+            .navbar {
+                height: 30px;
+            }
+            .footer {
+                height: 150px;
+            }
+        </style>
+    </head> 
+    <body> 
+        <div class="app">
+            <div class="navbar" style="background-color: moccasin; text-align: center; display: flex; justify-content: center; align-items: center;">Ez itt a navbar</div>
+            <div class="content" style="background-color: pink; text-align: center; display: flex; justify-content: center; align-items: center;">keklambo content</div>
+            <div class="footer"  style="background-color: mediumseagreen; text-align: center; display: flex; justify-content: center; align-items: center;">Baszó footer</div>
+        </div>
+    </body> 
+</html>
