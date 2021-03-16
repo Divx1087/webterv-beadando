@@ -4,6 +4,7 @@ body {
   font-family: 'sofia-pro', sans-serif;
   font-weight: 300;
   height: 100%;
+  line-height: 1.3;
 }
 
 #navbar {
@@ -97,6 +98,7 @@ div.galeria img {
 .cimek{
   color: rgb(202, 80, 80);
   text-shadow: 1px 1px 5px grey;
+  letter-spacing: 3px;
 }
 .arak{
   text-align: right;
@@ -117,6 +119,7 @@ div.galeria img {
 .main {
   margin-left: 5%;
   margin-right: 5%;
+  margin-bottom: 100px;
 }
 
 mark{
@@ -175,6 +178,11 @@ mark{
   background-color: white;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   border-radius: 5px;
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(decorative-border_1048-11718.jpg) 30 round;
+  margin-bottom: 300px;
+  margin-top: 170px;
 }
 
 .login-table {
@@ -197,8 +205,8 @@ mark{
   width: 100%;
   z-index: 10;
   overflow: hidden;
-  left: 0;
-  bottom: 0;
+  left: 0px;
+  bottom: 0px;
   font-size: 14px;
 }
 
@@ -219,9 +227,8 @@ mark{
   float: right;
 }
 
-.col {
+.col { 
   position: relative;
-  
 }
 
 .footer-table {
@@ -235,3 +242,8 @@ mark{
   list-style-type:none;
 }
 
+.details{
+  outline: #a1321f solid 10px;
+  padding:20px 200px 20px 20px;
+  border: 2px solid black;
+}
