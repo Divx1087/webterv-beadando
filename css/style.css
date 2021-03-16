@@ -196,6 +196,10 @@ mark{
   margin-right: auto;
 }
 
+#login input[type].submit-btn:hover {
+  cursor: pointer;
+}
+
 #global-footer {
   padding-top: 75px;
   padding-bottom: 65px;
@@ -221,10 +225,40 @@ mark{
 .details {
   text-align: left;
   float: left;
+  border: 1px solid rgb(209, 209, 209);
+  padding: 20px 20px 20px 20px;
+  opacity: .55;
+  border-radius: 5px;
 }
 
 .links {
   float: right;
+  opacity: .55;
+  border: 1px solid rgb(209, 209, 209);
+  padding: 20px 20px 20px 20px;
+  opacity: .55;
+  border-radius: 5px;
+}
+
+.links a {
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 800;
+  color: royalblue;
+  overflow: hidden;
+  background: linear-gradient(to right, midnightblue, midnightblue 50%, royalblue 50%); 
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 275ms ease;
+  opacity: .7;
+}
+
+.links a:hover {
+  background-position: 0 100%;
 }
 
 .col { 
@@ -242,8 +276,80 @@ mark{
   list-style-type:none;
 }
 
-.details{
-  outline: #a1321f solid 10px;
-  padding:20px 200px 20px 20px;
-  border: 2px solid black;
+.iframe-kakaseu {
+  width: 400px;
+  height: 650px;
+  margin-top: 30px;
+  border-radius: 5px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  position: static;
+  border-image: url(decorative-border_1048-11718.jpg) 30 round;
+  margin: auto;
+}
+
+@media print {  
+  h1 { font-size: 70pt; color: darkred; } 
+  footer {page-break-after: always;} 
+}
+
+#etterem-png {
+  max-width: 100%;
+}
+
+.main-rolunk {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 100px;
+  font-size: 120%;
+  line-height: 150%;
+  padding-bottom: 2em;
+}
+
+.main-rolunk h1 {
+  text-align: center;
+}
+
+#rendezvenyek-btn {
+  width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+#etelek-btn {
+  width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+#rolunk-table {
+  text-align: center;
+  margin: auto;
+}
+
+.galeria-etelek {
+
+}
+
+.main-index {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 100px;
+  font-size: 120%;
+  line-height: 150%;
+  padding-bottom: 2em;
+}
+
+.main-index h1 {
+  text-align: center;
+}
+
+.multicolumn {
+  margin: auto;
+  text-align: center !important;
+}
+
+.multi-newspaper {
+  column-count: 2;
+  padding: 15px;
+  column-gap: 40px;
+  column-rule: 1px solid lightgrey;
+  text-align: center;
 }
