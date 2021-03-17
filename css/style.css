@@ -139,7 +139,6 @@ img.Image{
 .mertek {
   text-align: right;
   font-size: 17px;
-  text-decoration: underline;
   float: right;
   padding-left: 30px;
 }
@@ -257,6 +256,7 @@ mark {
   padding: 20px 20px 20px 20px;
   opacity: .55;
   border-radius: 5px;
+  outline:rgb(233, 230, 212) solid 1px;
 }
 
 .links {
@@ -266,6 +266,7 @@ mark {
   padding: 20px 20px 20px 20px;
   opacity: .55;
   border-radius: 5px;
+  outline:rgb(233, 230, 212) solid 1px;
 }
 
 .links a {
@@ -433,7 +434,7 @@ mark {
   background-color: black;
   color: #fff;
   text-align: center;
-  border-radius: 6px;
+  border-radius: 5px;
   padding: 5px 0;
   position: absolute;
   z-index: 11;
