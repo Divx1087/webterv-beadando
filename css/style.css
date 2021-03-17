@@ -17,7 +17,7 @@ body {
   box-shadow: -1px 4px 5px 0px rgba(209, 205, 209, 1);
 }
 
-#logo {
+.logo {
   display: grid;
   justify-content: start;
   align-content: center;
@@ -45,7 +45,7 @@ a:hover {
   color: #0474bc;
 }
 
-#active-nav {
+.active-nav {
   background-color: #c92a2a;
   color: rgb(255, 255, 255);
   border-radius: 5px;
@@ -102,7 +102,7 @@ div.galeria-etelek {
   margin: 30px;
   border: 1px solid rgba(224, 224, 224, 0.815);
   float: left;
-  width: 24%;
+  width: 30%;
   box-shadow: -1px 4px 5px 0px rgba(209, 205, 209, 1);
 }
 
@@ -111,26 +111,20 @@ div.galeria-etelek:hover {
   box-shadow: -1px 4px 5px 0px rgba(209, 205, 209, 1);
 }
 
-div.galeria-etelek img {
-  width: 70%;
-
-}
-
 img.Image{
   max-width: 70%;
   margin-right: auto;
   margin-left: auto;
   display: block;
 }
-div#galeria-etelek{
-  width: 600px;
-}
+
 .cimek{
   color: rgb(202, 80, 80);
   text-shadow: 1px 1px 5px grey;
   letter-spacing: 3px;
 }
-.arak{
+
+.arak {
   text-align: right;
   font-weight: bold;
   font-size: 17px;
@@ -138,7 +132,7 @@ div#galeria-etelek{
   padding-left: 30px;
 }
 
-.mertek{
+.mertek {
   text-align: right;
   font-size: 17px;
   text-decoration: underline;
@@ -152,10 +146,9 @@ div#galeria-etelek{
   margin-bottom: 100px;
 }
 
-mark{
+mark {
   background-color: rgb(208, 255, 0);
 }
-
 
 .dropbtn {
   color: black;
@@ -341,32 +334,32 @@ mark{
   text-align: center;
 }
 
-#rendezvenyek-btn {
-  width: 130px;
-  height: 40px;
-  vertical-align: middle;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  text-align: center;
-  display: inline-block;
-  font-size: 15px;
-  margin: 2px 2px;
-  cursor: pointer;
-  color:yellow;
-  border-radius:5px;
+#rolunk-table a[href]:hover {
+  background-position: 0 100%;
 }
 
-#etelek-btn {
+#rolunk-table a[href] {
+  border-radius:5px;
+  cursor: pointer;
+  margin: 2px 2px;
   width: 130px;
   height: 40px;
   vertical-align: middle;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   text-align: center;
+  position: relative;
   display: inline-block;
-  font-size: 15px;
-  margin: 2px 2px;
-  cursor: pointer;
-  color:rgb(143, 30, 30);  
-  border-radius:5px;
+  font-size: 18px;
+  font-weight: 800;
+  color: rgb(0, 0, 0);
+  overflow: hidden;
+  background: linear-gradient(to right, rgb(0, 0, 0), rgb(0, 0, 0) 50%, rgb(53, 53, 53) 50%); 
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 275ms ease;
+  opacity: .7;
 }
 
 #rolunk-table {
@@ -400,14 +393,17 @@ mark{
   text-align: center;
 }
 
-.white-space{
-  white-space:pre;
+.white-space {
+  white-space: pre;
+  text-align: center;
 }
-#lista{
+
+#lista {
   margin:auto;
-  text-align: left;
-  margin-left: 150px;
+  text-align: center;
+  list-style-type: none;
 }
-.rolunk-fooldal{
+
+.rolunk-fooldal {
   text-shadow: 1px 1px 5px grey;
 }
