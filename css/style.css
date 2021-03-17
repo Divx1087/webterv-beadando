@@ -93,8 +93,38 @@ div.galeria img {
   margin: auto;
   width: 100%;
   padding: 3px;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
 }
 
+div.galeria-etelek {
+  margin: 30px;
+  border: 1px solid rgba(224, 224, 224, 0.815);
+  float: left;
+  width: 24%;
+  box-shadow: -1px 4px 5px 0px rgba(209, 205, 209, 1);
+}
+
+div.galeria-etelek:hover {
+  border: 1px solid rgba(119, 119, 119, 0.856);
+  box-shadow: -1px 4px 5px 0px rgba(209, 205, 209, 1);
+}
+
+div.galeria-etelek img {
+  width: 70%;
+
+}
+
+img.Image{
+  max-width: 70%;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+}
+div#galeria-etelek{
+  width: 600px;
+}
 .cimek{
   color: rgb(202, 80, 80);
   text-shadow: 1px 1px 5px grey;
@@ -181,7 +211,7 @@ mark{
   border: 10px solid transparent;
   padding: 15px;
   border-image: url(decorative-border_1048-11718.jpg) 30 round;
-  margin-bottom: 300px;
+  margin-bottom: 200px;
   margin-top: 170px;
 }
 
@@ -247,7 +277,7 @@ mark{
   font-weight: 800;
   color: royalblue;
   overflow: hidden;
-  background: linear-gradient(to right, midnightblue, midnightblue 50%, royalblue 50%); 
+ background: linear-gradient(to right, midnightblue, midnightblue 50%, royalblue 50%); 
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -284,7 +314,9 @@ mark{
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   position: static;
   border-image: url(decorative-border_1048-11718.jpg) 30 round;
-  margin: auto;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
 }
 
 @media print {  
@@ -310,22 +342,36 @@ mark{
 }
 
 #rendezvenyek-btn {
-  width: 100px;
+  width: 130px;
+  height: 40px;
+  vertical-align: middle;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  text-align: center;
+  display: inline-block;
+  font-size: 15px;
+  margin: 2px 2px;
+  cursor: pointer;
+  color:yellow;
+  border-radius:5px;
 }
 
 #etelek-btn {
-  width: 100px;
+  width: 130px;
+  height: 40px;
+  vertical-align: middle;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  text-align: center;
+  display: inline-block;
+  font-size: 15px;
+  margin: 2px 2px;
+  cursor: pointer;
+  color:rgb(143, 30, 30);  
+  border-radius:5px;
 }
 
 #rolunk-table {
   text-align: center;
   margin: auto;
-}
-
-.galeria-etelek {
-
 }
 
 .main-index {
@@ -352,4 +398,16 @@ mark{
   column-gap: 40px;
   column-rule: 1px solid lightgrey;
   text-align: center;
+}
+
+.white-space{
+  white-space:pre;
+}
+#lista{
+  margin:auto;
+  text-align: left;
+  margin-left: 150px;
+}
+.rolunk-fooldal{
+  text-shadow: 1px 1px 5px grey;
 }
