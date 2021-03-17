@@ -151,7 +151,8 @@ img.Image{
 }
 
 mark {
-  background-color: rgb(208, 255, 0);
+  background-color: orange;
+  font-style: italic;
 }
 
 .dropbtn {
@@ -410,4 +411,34 @@ mark {
 
 .rolunk-fooldal {
   text-shadow: 1px 1px 5px grey;
+}
+
+#fixed-img {
+  position: fixed;
+  float: left;
+  cursor: pointer;
+  width: 100px;
+  z-index: 10;
+}
+
+#tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+#tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 11;
+}
+
+#tooltip:hover .tooltiptext {
+  visibility: visible;
 }
