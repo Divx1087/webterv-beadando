@@ -99,20 +99,24 @@ div.galeria img {
 }
 
 div.galeria-etelek {
-  margin: 30px;
-  border: 1px solid rgba(224, 224, 224, 0.815);
+  margin-bottom: 30px;
+  margin-top: 30px;
   float: left;
   width: 30%;
+}
+
+div.galeria-etelek img[src] {
+  border: 1px solid rgba(224, 224, 224, 0.815);
   box-shadow: -1px 4px 5px 0px rgba(209, 205, 209, 1);
 }
 
-div.galeria-etelek:hover {
+div.galeria-etelek img[src]:hover {
   border: 1px solid rgba(119, 119, 119, 0.856);
   box-shadow: -1px 4px 5px 0px rgba(209, 205, 209, 1);
 }
 
 img.Image{
-  max-width: 70%;
+  max-width: 40%;
   margin-right: auto;
   margin-left: auto;
   display: block;
