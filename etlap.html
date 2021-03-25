@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="hu">
   <head>
+    <meta charset="UTF-8">
     <title>Kiskakas Vendéglő</title>
 
     <link rel="stylesheet" href="css/style.css">
@@ -36,16 +37,20 @@
   <div class="main">
     <h1 class ="cimek">Előételek</h1>
     <table style="width:95%">
-
       <tr>
-        <td>Tatár beefsteak kerti zöldségekkel, pirítóssal, vajjal</td>
-        <td class ="arak">10dkg: 1990.-</td>
-        <td class ="arak">20dkg: 3690.-</td>
+        <th id="nev"></th>
+        <th id="ar1"></th>
+        <th id="ar2"></th>
+      </tr>
+      <tr>
+        <td headers="nev">Tatár beefsteak kerti zöldségekkel, pirítóssal, vajjal</td>
+        <td headers="ar1" class ="arak">10dkg: 1990.-</td>
+        <td headers="ar2" class ="arak">20dkg: 3690.-</td>
       </tr>
 
       <tr>
-        <td>Caesar saláta</td>
-        <td colspan="2"  class ="arak">1890.-</td>
+        <td headers="nev">Caesar saláta</td>
+        <td headers="ar1 ar2" colspan="2"  class ="arak">1890.-</td>
       </tr>
 
     </table>
