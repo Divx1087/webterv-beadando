@@ -51,20 +51,20 @@
 
             <div id="login">
 
-                <h1 id="bejelentkezes">Bejelentkezés</h1>
+                <legend id="bejelentkezes">Bejelentkezés</legend>
 
                 <form method="POST">
 
-                    <table class="login-table">
+                    <table class="center-table">
 
                         <tr>
                             <td>Felhasználónév:</td>
-                            <td><input type="text" name="username" required style="margin-top:5px"/></td>
+                            <td><input type="text" name="felhasznalonev" required style="margin-top:5px"/></td>
                         </tr>
 
                         <tr>
-                            <td>Jelszó:</td>
-                            <td><input type="password" name="password" required style="margin-top:5px"/></td>
+                            <td><label for="jelszo">Jelszó:</label></td>
+                            <td><input type="password" name="jelszo" required style="margin-top:5px"/></td>
                         </tr>
 
                         <tr>
@@ -81,7 +81,7 @@
 
                     </table>
 
-                    <input type="submit" value="Bejelentkezés" class="submit-btn">
+                    <input type="submit" value="Bejelentkezés" class="reg-btn">
 
                 </form>
 
@@ -89,7 +89,55 @@
             <div id="belepes">
                  <iframe src="https://kiskakasvendeglo.eu/login" title="Facebook" class="iframe-kakaseu"></iframe>
              </div>
+
+             <div id="registration">
+
+                <legend id="regisztracio"> Regisztráció</legend>
+
+                    <form method="POST">
+                        <table class="center-table">
+                            <tr>
+                                <td>Vezetéknév:</td>
+                                <td><input type="text" name="vezeteknev" required style="margin-top:5px"/></td>
+                            </tr>
+
+                            <tr>
+                                <td>Keresztnév:</td>
+                                <td><input type="text" name="keresztnev" required style="margin-top:5px"/></td>
+                            </tr>
+
+                            <tr>
+                                <td>Felhasználónév:</td>
+                                <td><input type="text" name="felhasznalonev" required style="margin-top:5px"/></td>
+                            </tr>
+
+                            <tr>
+                                <td>Jelszó:</td>
+                                <td><input type="password" name="jelszo" required style="margin-top:5px"/></td>
+                            </tr>
+
+                            <tr>
+                                <td>E-mail:</td>
+                                <td><input type="text" name="email" required style="margin-top:5px"/></td>
+                            </tr>
+
+                            <tr>
+                                <td>E-mail újra:</td>
+                                <td><input type="text" name="email" required style="margin-top:5px"/></td>
+                            </tr>
+
+                        </table>
+
+                        <input type="submit" value="Regisztráció" class="reg-btn">
+
+                        <input type="reset" value="Adatok törlése" class ="reg-btn">
+
+                    </form>
+
+             </div>
         </div>
+
+
 
         <footer id="global-footer">
 

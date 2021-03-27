@@ -183,6 +183,7 @@ mark {
 
 .dropdown-content a:hover {
   background-color: #f1f1f1;
+  text-decoration: underline;
 }
 
 .dropdown:hover .dropdown-content {
@@ -212,18 +213,18 @@ mark {
   margin-top: 170px;
 }
 
-.login-table {
+.center-table {
   margin: auto;
 }
 
-.submit-btn {
+.reg-btn {
   margin-top: 5px;
   margin-bottom: 5px;
   margin-left: auto;
   margin-right: auto;
 }
 
-#login input[type].submit-btn:hover {
+#login input[type].reg-btn:hover {
   cursor: pointer;
 }
 
@@ -442,4 +443,30 @@ mark {
 
 #tooltip:hover .tooltiptext {
   visibility: visible;
+}
+
+#bejelentkezes {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+#registration {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: auto;
+  margin-top: 20px;
+  max-width: 450px;
+  text-align: center;
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  border: 10px solid transparent;
+  padding: 15px;
+  margin-bottom: 200px;
+  margin-top: 170px;
+}
+
+#regisztracio {
+  font-size: 26px;
+  font-weight: bold;
 }
