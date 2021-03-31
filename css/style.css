@@ -470,3 +470,7 @@ mark {
   font-size: 26px;
   font-weight: bold;
 }
+
+.disp-table {
+  display:table;
+}
