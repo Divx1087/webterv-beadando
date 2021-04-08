@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="hu">
     <head>
@@ -28,18 +34,18 @@
                     </div>
     
                     <div id="links">
-                        <a href="index.html" class="active-nav">Főoldal</a>
-                        <a href="rolunk.html">Rólunk</a>
-                        <a href="etlap.html">Étlap</a>
-                        <a href="itallap.html">Itallap</a>
+                        <a href="index.php" class="active-nav">Főoldal</a>
+                        <a href="rolunk.php">Rólunk</a>
+                        <a href="etlap.php">Étlap</a>
+                        <a href="itallap.php">Itallap</a>
                         <div class="dropdown">
                             <button class="dropbtn" ><b>Galéria</b></button>
                             <div class="dropdown-content">
-                                <a href="rendezvenyek.html">Rendezvények</a>
-                                <a href="etelek.html">Ételek</a>
+                                <a href="rendezvenyek.php">Rendezvények</a>
+                                <a href="etelek.php">Ételek</a>
                             </div>
                         </div>
-                    <a href="login.html">Belépés</a>
+                    <a href="login.php">Belépés</a>
     
                 </div>
     
