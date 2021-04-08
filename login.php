@@ -185,9 +185,10 @@ include "functions.php";
                     $jelszo = "";
 					$emailc = "";
                     $uzenet = [];
+                    $hiba = [];
 					
 					if(isset($_POST["register"])){
-						
+						$oldusers = betoltes("felhasznalok.txt");
 						if(!empty($_POST["vezeteknev"])){
 							$veznev = $_POST["vezeteknev"];
 						} else {
@@ -218,7 +219,40 @@ include "functions.php";
 							$uzenet[] = "Add meg a e-mail címed!";
 						}
 						
-						
+
+                        foreach($oldusers as $olduser){
+                            if($user === $olduser["username"]){
+                                $hiba[] = "A felhasználónév már foglalt";
+                            }
+                        }
+
+                        if(strlen($jelszo) < 8){
+                            $hiba[] = "A jelszó legalább 8 karakter hosszú kell legyen!";
+                        }
+
+                        if(!preg_match('/[A-Za-z]/', $jelszo) || !preg_match('/[0-9]/', $jelszo)){
+                            $hiba[] = "A jelszónak tartalmaznia kell betűt és számot egyaránt!";
+                        }
+
+                        if(count($hiba) === 0){
+							echo "Sikeres regisztráció!" . "<br/>";
+							$newuser = [
+								"vezeteknev" => $veznev,
+								"keresztnev" => $kernev,
+								"felhasznalonev" => $felhnev,
+								"reg-jelszo" => $jelszo,
+								"email" => $emailc,
+							];
+							
+							kiiras($newuser, "felhasznalok.txt", "a");
+							
+						} else {
+							foreach($hiba as $hibak){
+								echo $hibak . "<br/>";
+							}
+						}	
+
+						/*
 						$kiterj = ["jpg", "jpeg", "png"];
 						$kiterjeszt = pathinfo($_FILES["utl"]["name"], PATHINFO_EXTENSION);
 						
@@ -236,28 +270,7 @@ include "functions.php";
 						} else {
 							$uzenet[] = "Nem megfelelő kiterjesztés!";
 						}
-						
-						if(count($uzenet) === 0){
-							$newvacation = [
-								"vezeteknev" => $veznev,
-								"keresztnev" => $kernev,
-								"felhasznalonev" => $felhnev,
-                                "reg-jelszo" => $jelszo,
-								"email" => $emailc,
-							];
-						
-							$filename = "travelers/" . $veznev . $kernev . ".txt";
-							kiiras($newvacation, $filename, "w");
-							
-							$_SESSION["files"] = ["user" => $filename, "picture" => $picname];
-							header("Location: form.php");
-						} else {
-							foreach($uzenet as $uzi){
-								echo $uzi . "<br/>";
-							}
-						}
-						
-						
+						*/
 						
 					}
 					
