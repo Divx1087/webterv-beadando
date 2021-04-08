@@ -53,7 +53,7 @@ session_start();
   
       </header>
 
-        <form id="login" method="POST">
+        <form action="login.php" id="login" method="POST" autocomplete="off">
             <fieldset>
                 <legend id="bejelentkezes">Bejelentkezés</legend>
 
@@ -88,9 +88,43 @@ session_start();
 
                 </table>
 
-                <input type="submit" value="Bejelentkezés" class="reg-btn">
+                <input type="submit" name="login" value="Bejelentkezés" class="reg-btn">
             </fieldset>
         </form>
+
+        <?php
+            $user = "";
+            $password = "";
+
+            if(isset($_POST["login"])){
+                $user = $_POST["felhasznalonev"];
+                $password = $_POST["jelszo"];
+                
+                $file = fopen("felhasznalok.txt", "r");
+                $uzenet = false;
+                
+                if($file === false){
+                    die("Hiba a fájl megnyitása során!");
+                }
+                
+                $users = betoltes("felhasznalok.txt");
+                
+                foreach($users as $oldusers){
+                    if($user === $oldusers["username"] && $password === $oldusers["password"]){
+                        $user_data = ["username" => $oldusers["username"], "email" => $oldusers["email"]];
+                        $uzenet = true;
+                        break;
+                    }
+                }
+                
+                if($uzenet){
+                    $_SESSION["user"] = $user_data;
+                    header("Location: profile.php");
+                } else {
+                    echo "Sikertelen belépés!";
+                }
+                        }
+        ?>
 
         <div id="belepes">
                 <iframe src="https://kiskakasvendeglo.eu/login" title="Facebook" class="iframe-kakaseu"></iframe>
@@ -98,7 +132,7 @@ session_start();
 
         
 
-            <form id="registration" method="POST">
+            <form id="registration" method="POST" autocomplete="off">
                 <fieldset>
                     
                     <legend id="regisztracio"> Regisztráció</legend>
@@ -111,41 +145,121 @@ session_start();
 
                         <tr>
                             <td headers="nev22">Vezetéknév:</td>
-                            <td headers="bemenet1"><input type="text" name="vezeteknev" required style="margin-top:5px"/></td>
+                            <td headers="bemenet1"><input type="text" name="vezeteknev" style="margin-top:5px"/></td>
                         </tr>
 
                         <tr>
                             <td headers="nev22">Keresztnév:</td>
-                            <td headers="bemenet1"><input type="text" name="keresztnev" required style="margin-top:5px"/></td>
+                            <td headers="bemenet1"><input type="text" name="keresztnev" style="margin-top:5px"/></td>
                         </tr>
 
                         <tr>
                             <td headers="nev22">Felhasználónév:</td>
-                            <td headers="bemenet1"><input type="text" name="felhasznalonev" required style="margin-top:5px"/></td>
+                            <td headers="bemenet1"><input type="text" name="felhasznalonev" style="margin-top:5px"/></td>
                         </tr>
 
                         <tr>
                             <td headers="nev22"><label for="reg-password">Jelszó:</label></td>
-                            <td headers="bemenet1"><input type="password" id="reg-password" name="jelszo" required style="margin-top:5px"/></td>
+                            <td headers="bemenet1"><input type="password" id="reg-password" name="reg-jelszo" style="margin-top:5px"/></td>
                         </tr>
 
                         <tr>
                             <td headers="nev22">E-mail:</td>
-                            <td headers="bemenet1"><input type="text" name="email" required style="margin-top:5px"/></td>
-                        </tr>
-
-                        <tr>
-                            <td headers="nev22">E-mail újra:</td>
-                            <td headers="bemenet1"><input type="text" name="email" required style="margin-top:5px"/></td>
+                            <td headers="bemenet1"><input type="text" name="email" style="margin-top:5px"/></td>
                         </tr>
 
                     </table>
 
-                    <input type="submit" value="Regisztráció" class="reg-btn">
+                    <input type="submit" name="register" value="Regisztráció" class="reg-btn">
 
                     <input type="reset" value="Adatok törlése" class ="reg-btn">
                 </fieldset>
             </form>
+
+            <?php
+					$veznev = "";
+					$kernev = "";
+                    $felhnev = "";
+                    $jelszo = "";
+					$emailc = "";
+                    $uzenet = [];
+					
+					if(isset($_POST["register"])){
+						
+						if(!empty($_POST["vezeteknev"])){
+							$veznev = $_POST["vezeteknev"];
+						} else {
+							$uzenet[] = "Add meg a vezetékneved!";
+						}	
+
+						if(!empty($_POST["keresztnev"])){
+							$kernev = $_POST["keresztnev"];
+						} else {
+							$uzenet[] = "Add meg a keresztneved!";
+						}
+
+                        if(!empty($_POST["felhasznalonev"])){
+							$felhnev = $_POST["felhasznalonev"];
+						} else {
+							$uzenet[] = "Add meg a felhasználóneved!";
+						}
+
+                        if(!empty($_POST["reg-jelszo"])){
+							$jelszo = $_POST["reg-jelszo"];
+						} else {
+							$uzenet[] = "Add meg a jelszavad!";
+						}
+
+                        if(!empty($_POST["email"])){
+							$emailc = $_POST["email"];
+						} else {
+							$uzenet[] = "Add meg a e-mail címed!";
+						}
+						
+						
+						$kiterj = ["jpg", "jpeg", "png"];
+						$kiterjeszt = pathinfo($_FILES["utl"]["name"], PATHINFO_EXTENSION);
+						
+						if(in_array($kiterjeszt, $kiterj)){
+							if($_FILES["utl"]["error"] === 0){
+								if($_FILES["utl"]["size"] <= 10000000){
+									$picname = "passports/" . $veznev . $kernev . "pass." . $kiterjeszt;
+									move_uploaded_file($_FILES["utl"]["tmp_name"], $picname);
+								} else {
+									$uzenet[] = "A fájlméret túl nagy!";
+								}
+							} else {
+								$uzenet[] = "Hiba a fájl feltöltése közben!";
+							}
+						} else {
+							$uzenet[] = "Nem megfelelő kiterjesztés!";
+						}
+						
+						if(count($uzenet) === 0){
+							$newvacation = [
+								"vezeteknev" => $veznev,
+								"keresztnev" => $kernev,
+								"felhasznalonev" => $felhnev,
+                                "reg-jelszo" => $jelszo,
+								"email" => $emailc,
+							];
+						
+							$filename = "travelers/" . $veznev . $kernev . ".txt";
+							kiiras($newvacation, $filename, "w");
+							
+							$_SESSION["files"] = ["user" => $filename, "picture" => $picname];
+							header("Location: form.php");
+						} else {
+							foreach($uzenet as $uzi){
+								echo $uzi . "<br/>";
+							}
+						}
+						
+						
+						
+					}
+					
+				?>
 
         <footer id="global-footer">
 

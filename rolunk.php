@@ -85,13 +85,13 @@ session_start();
 
                 <td class="disp-table">
 
-                    <a href="rendezvenyek.html" id="rendezvenyek-btn"><b>Rendezvények</b></a>
+                    <a href="rendezvenyek.php" id="rendezvenyek-btn"><b>Rendezvények</b></a>
 
                 </td>
 
                 <td class="disp-table">
 
-                    <a href="etelek.html" id="etelek-btn"><b>Ételek</b></a>
+                    <a href="etelek.php" id="etelek-btn"><b>Ételek</b></a>
 
                 </td>
 
