@@ -2,6 +2,8 @@
 
 session_start();
 
+include "functions.php"; 
+
 ?>
 
 <!DOCTYPE html>
