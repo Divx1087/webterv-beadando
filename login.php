@@ -45,7 +45,12 @@ include "functions.php";
                               <a href="etelek.php">Ételek</a>
                           </div>
                       </div>
-                      <a href="login.php" class="active-nav">Belépés</a>
+                    <?php if(!isset($_SESSION["user"]) || empty($_SESSION["user"])): ?>
+                        <a href="login.php" class="active-nav">Belépés</a>
+                    <?php else: ?>
+                        <a href="profil.php">Profil</a>
+                        <a href="logout.php">Kijelentkezés</a>
+					<?php endif; ?>	
   
                   </div>
   
@@ -112,8 +117,8 @@ include "functions.php";
                 $users = betoltes("felhasznalok.txt");
                 
                 foreach($users as $oldusers){
-                    if($user === $oldusers["username"] && $password === $oldusers["password"]){
-                        $user_data = ["username" => $oldusers["username"], "email" => $oldusers["email"]];
+                    if($user === $oldusers["felhasznalonev"] && $password === $oldusers["reg-jelszo"]){
+                        $user_data = ["felhasznalonev" => $oldusers["felhasznalonev"], "email" => $oldusers["email"]];
                         $uzenet = true;
                         break;
                     }
@@ -121,7 +126,8 @@ include "functions.php";
                 
                 if($uzenet){
                     $_SESSION["user"] = $user_data;
-                    header("Location: profile.php");
+                    header("Location: index.php");
+                    echo "Sikeres belépés!";
                 } else {
                     echo "Sikertelen belépés!";
                 }
@@ -166,6 +172,11 @@ include "functions.php";
                         </tr>
 
                         <tr>
+                            <td headers="nev22"><label for="reg-password">Jelszó:</label></td>
+                            <td headers="bemenet1"><input type="password" id="reg-password" name="reg-jelszo2" style="margin-top:5px"/></td>
+                        </tr>
+
+                        <tr>
                             <td headers="nev22">E-mail:</td>
                             <td headers="bemenet1"><input type="text" name="email" style="margin-top:5px"/></td>
                         </tr>
@@ -183,8 +194,8 @@ include "functions.php";
 					$kernev = "";
                     $felhnev = "";
                     $jelszo = "";
+                    $jelszo2 = "";
 					$emailc = "";
-                    $uzenet = [];
                     $hiba = [];
 					
 					if(isset($_POST["register"])){
@@ -192,37 +203,49 @@ include "functions.php";
 						if(!empty($_POST["vezeteknev"])){
 							$veznev = $_POST["vezeteknev"];
 						} else {
-							$uzenet[] = "Add meg a vezetékneved!";
+							$hiba[] = "Add meg a vezetékneved!";
 						}	
 
 						if(!empty($_POST["keresztnev"])){
 							$kernev = $_POST["keresztnev"];
 						} else {
-							$uzenet[] = "Add meg a keresztneved!";
+							$hiba[] = "Add meg a keresztneved!";
 						}
 
                         if(!empty($_POST["felhasznalonev"])){
 							$felhnev = $_POST["felhasznalonev"];
 						} else {
-							$uzenet[] = "Add meg a felhasználóneved!";
+							$hiba[] = "Add meg a felhasználóneved!";
 						}
 
                         if(!empty($_POST["reg-jelszo"])){
 							$jelszo = $_POST["reg-jelszo"];
 						} else {
-							$uzenet[] = "Add meg a jelszavad!";
+							$hiba[] = "Add meg a jelszavad!";
+						}
+
+                        if(!empty($_POST["reg-jelszo2"])){
+							$jelszo2 = $_POST["reg-jelszo2"];
+						} else {
+							$hiba[] = "Add meg a jelszavad!";
 						}
 
                         if(!empty($_POST["email"])){
 							$emailc = $_POST["email"];
 						} else {
-							$uzenet[] = "Add meg a e-mail címed!";
+							$hiba[] = "Add meg a e-mail címed!";
 						}
 						
 
                         foreach($oldusers as $olduser){
-                            if($user === $olduser["username"]){
+                            if($felhnev === $olduser["felhasznalonev"]){
                                 $hiba[] = "A felhasználónév már foglalt";
+                            }
+                        }
+
+                        foreach($oldusers as $olduser){
+                            if($emailc === $olduser["email"]){
+                                $hiba[] = "Ezzel az e-mail címmel már regisztráltak";
                             }
                         }
 
@@ -232,6 +255,10 @@ include "functions.php";
 
                         if(!preg_match('/[A-Za-z]/', $jelszo) || !preg_match('/[0-9]/', $jelszo)){
                             $hiba[] = "A jelszónak tartalmaznia kell betűt és számot egyaránt!";
+                        }
+
+                        if($jelszo !== $jelszo2){
+                            $hiba[] = "A két jelszó nem egyezik meg!";
                         }
 
                         if(count($hiba) === 0){
@@ -276,52 +303,7 @@ include "functions.php";
 					
 				?>
 
-        <footer id="global-footer">
-
-            <table class="footer-table">
-
-                <tr>
-                    <th id="footer3"></th>
-                    <th id="kozossegi3"></th>
-                    </tr>
-
-                <tr>
-                    <td headers="footer3" class="details">
-                        <div >
-                                Étterem / Restaurant <br/>
-                                Cegled Gastro Kft. <br/>
-                                Tel.: +36-53/787-797 <br/>
-                                Tel.: +36-70/466-30-44 <br/>
-                                E-mail: cegledgastro@gmail.com <br/>
-                                Hungary, Széchenyi út 11. <br/>         
-                        </div>
-                    </td>
-
-                    <td headers="kozossegi3">
-                        <div class="col links">
-                            
-                            <ul style="text-align: right">
-                                <li>
-                                    <a href="https://www.facebook.com/KiskakasVendegloCegled" target="_blank" id="facebook">Facebook</a>
-                                </li>
-                                <li>
-                                    <a href="https://www.google.hu/maps/@47.1784265,19.7935229,3a,75y,209.15h,84.53t/data=!3m6!1e1!3m4!1swBSmr42-ULNHvh7RDpJaGg!2e0!7i13312!8i6656" target="_blank">Google Maps</a>
-                                </li>
-                            </ul>
-
-                        </div>
-
-                    </td>
-
-                </tr>
-
-            </table>
-
-            <div class="legal">
-                Copyright 2021. All Rights Reserved
-            </div>
-
-        </footer>
+        <?php include_once "footer.php"; ?>
 
     </body>
 

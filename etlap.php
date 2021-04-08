@@ -1,7 +1,9 @@
 <?php
 
 session_start();
-
+if((!isset($_SESSION["user"])) || empty($_SESSION["user"])){
+	header("Location: login.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -15,31 +17,45 @@ session_start();
   </head>
 
   <body>
-    <header>
-      <nav>
-          <div id="navbar">
-              <div class="logo">
-                  <div>
+  <header>
+  
+  <nav>
+
+      <div id="navbar">
+
+          <div class="logo">
+
+              <div>
                   <img src="img/kiskakas_logo.png" alt="kiskakas_logo" class="logo">  
-                  </div>
               </div>
-              <div id="links">
-                  <a href="index.php">Főoldal</a>
-                  <a href="rolunk.php">Rólunk</a>
-                  <a href="etlap.php" class="active-nav">Étlap</a>
-                  <a href="itallap.php">Itallap</a>
-                  <div class="dropdown">
-                      <button class="dropbtn"><b>Galéria</b></button>
-                      <div class="dropdown-content">
-                          <a href="rendezvenyek.php">Rendezvények</a>
-                          <a href="etelek.php">Ételek</a>
-                      </div>
-                  </div>
-                  <a href="login.php">Belépés</a>
-              </div>
+
           </div>
-      </nav>
-  </header>
+
+          <div id="links">
+              <a href="index.php">Főoldal</a>
+              <a href="rolunk.php">Rólunk</a>
+              <a href="etlap.php" class="active-nav">Étlap</a>
+              <a href="itallap.php">Itallap</a>
+              <div class="dropdown">
+                  <button class="dropbtn"><b>Galéria</b></button>
+                  <div class="dropdown-content">
+                      <a href="rendezvenyek.php">Rendezvények</a>
+                      <a href="etelek.php">Ételek</a>
+                  </div>
+              </div>
+            <?php if(!isset($_SESSION["user"]) || empty($_SESSION["user"])): ?>
+                <a href="login.php" >Belépés</a>
+            <?php else: ?>
+                <a href="logout.php">Kijelentkezés</a>
+  <?php endif; ?>	
+
+          </div>
+
+      </div>
+
+  </nav>
+
+</header>
   <div class="main">
     <h1 class ="cimek">Előételek</h1>
     <table style="width:95%">
@@ -368,46 +384,7 @@ session_start();
         </div>
       </div>
 
-      <footer id="global-footer">
-        <table class="footer-table">
-          <tr>
-            <th id="footer1"></th>
-            <th id="kozossegi1"></th>
-          </tr>
-
-            <tr>
-
-                <td headers="footer1" class="details">
-                    <div >
-                            Étterem / Restaurant <br/>
-                            Cegled Gastro Kft. <br/>
-                            Tel.: +36-53/787-797 <br/>
-                            Tel.: +36-70/466-30-44 <br/>
-                            E-mail: cegledgastro@gmail.com <br/>
-                            Hungary, Széchenyi út 11. <br/>         
-                    </div>
-                </td>
-
-                <td headers="kozossegi1">
-                    <div class="col links">
-                      <ul style="text-align: right">
-                        <li>
-                            <a href="https://www.facebook.com/KiskakasVendegloCegled" target="_blank" id="facebook">Facebook</a>
-                        </li>
-                        <li>
-                            <a href="https://www.google.hu/maps/@47.1784265,19.7935229,3a,75y,209.15h,84.53t/data=!3m6!1e1!3m4!1swBSmr42-ULNHvh7RDpJaGg!2e0!7i13312!8i6656" target="_blank">Google Maps</a>
-                        </li>
-                      </ul>
-                    </div>
-                </td>
-
-            </tr>
-
-        </table>
-
-        <div class="legal">
-            Copyright 2021. All Rights Reserved
-        </div>
-    </footer>
+      <?php include_once "footer.php"; ?>
+      
     </body>
 </html>

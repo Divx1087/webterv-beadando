@@ -17,43 +17,48 @@ session_start();
     
     </head>
     
-      <body>
+    <body>
     
         <header>
-    
+
             <nav>
-    
+
                 <div id="navbar">
-    
+
                     <div class="logo">
-    
+
                         <div>
                             <img src="img/kiskakas_logo.png" alt="kiskakas_logo" class="logo">  
                         </div>
-    
+
                     </div>
-    
+
                     <div id="links">
                         <a href="index.php" class="active-nav">Főoldal</a>
                         <a href="rolunk.php">Rólunk</a>
                         <a href="etlap.php">Étlap</a>
                         <a href="itallap.php">Itallap</a>
                         <div class="dropdown">
-                            <button class="dropbtn" ><b>Galéria</b></button>
+                            <button class="dropbtn"><b>Galéria</b></button>
                             <div class="dropdown-content">
                                 <a href="rendezvenyek.php">Rendezvények</a>
                                 <a href="etelek.php">Ételek</a>
                             </div>
                         </div>
-                    <a href="login.php">Belépés</a>
-    
+                        <?php if(!isset($_SESSION["user"]) || empty($_SESSION["user"])): ?>
+                            <a href="login.php" >Belépés</a>
+                        <?php else: ?>
+                            <a href="profil.php">Profil</a>
+                            <a href="logout.php">Kijelentkezés</a>
+                    <?php endif; ?>	
+
+                    </div>
+
                 </div>
-    
-            </div>
-    
-        </nav>
-    
-    </header>
+
+            </nav>
+
+        </header>
 
     <div id="tooltip">
         <img src="img/kakas-kiszallitas.jpg" alt="kiszallitas" id="fixed-img">
@@ -127,53 +132,7 @@ session_start();
     </div>
 
 
-        <footer id="global-footer">
-
-            <table class="footer-table">
-
-                <tr>
-                    <th id="footer6"></th>
-                    <th id="kozossegi6"></th>
-                  </tr>
-
-                <tr>
-                    <td headers="footer6" class="details">
-                        <div>
-                                Étterem / Restaurant <br/>
-                                Cegled Gastro Kft. <br/>
-                                Tel.: +36-53/787-797 <br/>
-                                Tel.: +36-70/466-30-44 <br/>
-                                E-mail: cegledgastro@gmail.com <br/>
-                                Hungary, Széchenyi út 11. <br/>         
-                        </div>
-                    </td>
-
-                    <td headers="kozossegi6">
-                        
-                        <div class="col links">
-                            
-                            <ul style="text-align: right">
-                                <li>
-                                    <a href="https://www.facebook.com/KiskakasVendegloCegled" target="_blank" id="facebook">Facebook</a>
-                                </li>
-                                <li>
-                                    <a href="https://www.google.hu/maps/@47.1784265,19.7935229,3a,75y,209.15h,84.53t/data=!3m6!1e1!3m4!1swBSmr42-ULNHvh7RDpJaGg!2e0!7i13312!8i6656" target="_blank">Google Maps</a>
-                                </li>
-                            </ul>
-
-                        </div>
-
-                    </td>
-
-                </tr>
-
-            </table>
-
-            <div class="legal">
-                Copyright 2021. All Rights Reserved
-            </div>
-
-        </footer>
+    <?php include_once "footer.php"; ?>
     
     </body>
 
