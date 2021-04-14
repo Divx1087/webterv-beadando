@@ -167,6 +167,11 @@ include "functions.php";
                         </tr>
 
                         <tr>
+                            <td headers="nev22">E-mail:</td>
+                            <td headers="bemenet1"><input type="text" name="email" style="margin-top:5px"/></td>
+                        </tr>
+
+                        <tr>
                             <td headers="nev22"><label for="reg-password">Jelszó:</label></td>
                             <td headers="bemenet1"><input type="password" id="reg-password" name="reg-jelszo" style="margin-top:5px"/></td>
                         </tr>
@@ -174,11 +179,6 @@ include "functions.php";
                         <tr>
                             <td headers="nev22"><label for="reg-password">Jelszó:</label></td>
                             <td headers="bemenet1"><input type="password" id="reg-password" name="reg-jelszo2" style="margin-top:5px"/></td>
-                        </tr>
-
-                        <tr>
-                            <td headers="nev22">E-mail:</td>
-                            <td headers="bemenet1"><input type="text" name="email" style="margin-top:5px"/></td>
                         </tr>
 
                     </table>
@@ -268,9 +268,9 @@ include "functions.php";
 								"keresztnev" => $kernev,
 								"felhasznalonev" => $felhnev,
 								"reg-jelszo" => $jelszo,
-								"email" => $emailc,
+								"email" => $emailc
 							];
-							
+
 							kiiras($newuser, "felhasznalok.txt", "a");
 							
 						} else {
@@ -278,26 +278,6 @@ include "functions.php";
 								echo $hibak . "<br/>";
 							}
 						}	
-
-						/*
-						$kiterj = ["jpg", "jpeg", "png"];
-						$kiterjeszt = pathinfo($_FILES["utl"]["name"], PATHINFO_EXTENSION);
-						
-						if(in_array($kiterjeszt, $kiterj)){
-							if($_FILES["utl"]["error"] === 0){
-								if($_FILES["utl"]["size"] <= 10000000){
-									$picname = "passports/" . $veznev . $kernev . "pass." . $kiterjeszt;
-									move_uploaded_file($_FILES["utl"]["tmp_name"], $picname);
-								} else {
-									$uzenet[] = "A fájlméret túl nagy!";
-								}
-							} else {
-								$uzenet[] = "Hiba a fájl feltöltése közben!";
-							}
-						} else {
-							$uzenet[] = "Nem megfelelő kiterjesztés!";
-						}
-						*/
 						
 					}
 					

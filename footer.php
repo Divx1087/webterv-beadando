@@ -12,6 +12,8 @@
 
     <body>
 
+    
+
         <footer id="global-footer">
 
             <table class="footer-table">
@@ -29,7 +31,12 @@
                                 Tel.: +36-53/787-797 <br/>
                                 Tel.: +36-70/466-30-44 <br/>
                                 E-mail: cegledgastro@gmail.com <br/>
-                                Hungary, Széchenyi út 11. <br/>         
+                                Hungary, Széchenyi út 11. <br/>
+                                <?php
+                                    $datum = new DateTime();
+                                    $datum->setTimezone(new DateTimeZone("Europe/Budapest"));
+                                    echo "Mai dátum" . $datum->format('Y-m-d H:i:s'); 
+                                ?>  
                         </div>
                     </td>
 

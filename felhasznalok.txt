@@ -1,0 +1,2 @@
+a:5:{s:10:"vezeteknev";s:4:"geci";s:10:"keresztnev";s:4:"geci";s:14:"felhasznalonev";s:4:"geci";s:10:"reg-jelszo";s:9:"gevigevi1";s:5:"email";s:4:"geci";}
+a:5:{s:10:"vezeteknev";s:4:"fasz";s:10:"keresztnev";s:4:"fasz";s:14:"felhasznalonev";s:4:"fasz";s:10:"reg-jelszo";s:11:"faszfasz123";s:5:"email";s:4:"fasz";}
