@@ -8,99 +8,103 @@ include "functions.php";
 
 <!DOCTYPE html>
 <html lang="hu">
-    <head>
-        <meta charset="UTF-8">
-        <title>Kiskakas Vendéglő</title>
-  
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
-      </head>
-  
-      <body>
-  
-        <header>
-  
-          <nav>
-  
-              <div id="navbar">
-  
-                  <div class="logo">
-  
-                      <div>
-                          <img src="img/kiskakas_logo.png" alt="kiskakas_logo" class="logo">  
-                      </div>
-  
-                  </div>
-  
-                  <div id="links">
-                      <a href="index.php">Főoldal</a>
-                      <a href="rolunk.php">Rólunk</a>
-                      <a href="etlap.php">Étlap</a>
-                      <a href="itallap.php">Itallap</a>
-                      <div class="dropdown">
-                          <button class="dropbtn"><b>Galéria</b></button>
-                          <div class="dropdown-content">
-                              <a href="rendezvenyek.php">Rendezvények</a>
-                              <a href="etelek.php">Ételek</a>
-                          </div>
-                      </div>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Kiskakas Vendéglő</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <nav>
+
+            <div id="navbar">
+
+                <div class="logo">
+
+                    <div>
+                        <img src="img/kiskakas_logo.png" alt="kiskakas_logo" class="logo">
+                    </div>
+
+                </div>
+
+                <div id="links">
+                    <a href="index.php">Főoldal</a>
+                    <a href="rolunk.php">Rólunk</a>
+                    <a href="etlap.php">Étlap</a>
+                    <a href="itallap.php">Itallap</a>
+                    <div class="dropdown">
+                        <button class="dropbtn"><b>Galéria</b></button>
+                        <div class="dropdown-content">
+                            <a href="rendezvenyek.php">Rendezvények</a>
+                            <a href="etelek.php">Ételek</a>
+                        </div>
+                    </div>
                     <?php if(!isset($_SESSION["user"]) || empty($_SESSION["user"])): ?>
-                        <a href="login.php" class="active-nav">Belépés</a>
+                    <a href="login.php" class="active-nav">Belépés</a>
                     <?php else: ?>
-                        <a href="profil.php">Profil</a>
-                        <a href="felh.php">Felhasználók</a>
-                        <a href="logout.php">Kijelentkezés</a>
-					<?php endif; ?>	
-  
-                  </div>
-  
-              </div>
-  
-          </nav>
-  
-      </header>
+                    <a href="profil.php">Profil</a>
+                    <a href="felh.php">Felhasználók</a>
+                    <a href="logout.php">Kijelentkezés</a>
+                    <?php endif; ?>
 
-        <form action="login.php" id="login" method="POST" autocomplete="off">
-            <fieldset>
-                <legend id="bejelentkezes">Bejelentkezés</legend>
+                </div>
 
-                <table class="center-table">
+            </div>
 
-                    <tr>
-                        <th id="nev21"></th>
-                        <th id="bemenet"></th>
-                    </tr>
+        </nav>
 
-                    <tr>
-                        <td headers="nev21">Felhasználónév:</td>
-                        <td headers="bemenet"><input type="text" name="felhasznalonev" required style="margin-top:5px"/></td>
-                    </tr>
+    </header>
 
-                    <tr>
-                        <td headers="nev21"><label for="my-password">Jelszó:</label></td>
-                        <td headers="bemenet"><input type="password" id="my-password" name="jelszo" required style="margin-top:5px"/></td>
-                    </tr>
+    <form action="login.php" id="login" method="POST" autocomplete="off">
+        <fieldset>
+            <legend id="bejelentkezes">Bejelentkezés</legend>
 
-                    <tr>
-                        <td colspan="2" headers="bemenet">
-                            <input type="checkbox" value="ls-remember-me" id="remember-me"/> <label for="remember-me">Emlékezz rám</label>
-                        </td>
-                    </tr>
+            <table class="center-table">
 
-                    <tr>
-                        <td colspan="2" headers="bemenet">
-                            <input type="hidden" id="custum-id" name="custom-id" value="6969"/>
-                        </td>
-                    </tr>
+                <tr>
+                    <th id="nev21"></th>
+                    <th id="bemenet"></th>
+                </tr>
 
-                </table>
+                <tr>
+                    <td headers="nev21">Felhasználónév:</td>
+                    <td headers="bemenet"><input type="text" name="felhasznalonev" required style="margin-top:5px" />
+                    </td>
+                </tr>
 
-                <input type="submit" name="login" value="Bejelentkezés" class="reg-btn">
-            </fieldset>
-        </form>
+                <tr>
+                    <td headers="nev21"><label for="my-password">Jelszó:</label></td>
+                    <td headers="bemenet"><input type="password" id="my-password" name="jelszo" required
+                            style="margin-top:5px" /></td>
+                </tr>
 
-        <?php
+                <tr>
+                    <td colspan="2" headers="bemenet">
+                        <input type="checkbox" value="ls-remember-me" id="remember-me" /> <label
+                            for="remember-me">Emlékezz rám</label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" headers="bemenet">
+                        <input type="hidden" id="custum-id" name="custom-id" value="6969" />
+                    </td>
+                </tr>
+
+            </table>
+
+            <input type="submit" name="login" value="Bejelentkezés" class="reg-btn">
+        </fieldset>
+    </form>
+
+    <?php
             $user = "";
             $password = "";
 
@@ -135,62 +139,64 @@ include "functions.php";
                         }
         ?>
 
-        <div id="belepes">
-                <iframe src="https://kiskakasvendeglo.eu/login" title="Facebook" class="iframe-kakaseu"></iframe>
-        </div>
+    <div id="belepes">
+        <iframe src="https://kiskakasvendeglo.eu/login" title="Facebook" class="iframe-kakaseu"></iframe>
+    </div>
 
-        
 
-            <form id="registration" method="POST" autocomplete="off">
-                <fieldset>
-                    
-                    <legend id="regisztracio"> Regisztráció</legend>
-                    <table class="center-table">
 
-                        <tr>
-                            <th id="nev22"></th>
-                            <th id="bemenet1"></th>
-                            </tr>
+    <form id="registration" method="POST" autocomplete="off">
+        <fieldset>
 
-                        <tr>
-                            <td headers="nev22">Vezetéknév:</td>
-                            <td headers="bemenet1"><input type="text" name="vezeteknev" style="margin-top:5px"/></td>
-                        </tr>
+            <legend id="regisztracio"> Regisztráció</legend>
+            <table class="center-table">
 
-                        <tr>
-                            <td headers="nev22">Keresztnév:</td>
-                            <td headers="bemenet1"><input type="text" name="keresztnev" style="margin-top:5px"/></td>
-                        </tr>
+                <tr>
+                    <th id="nev22"></th>
+                    <th id="bemenet1"></th>
+                </tr>
 
-                        <tr>
-                            <td headers="nev22">Felhasználónév:</td>
-                            <td headers="bemenet1"><input type="text" name="felhasznalonev" style="margin-top:5px"/></td>
-                        </tr>
+                <tr>
+                    <td headers="nev22">Vezetéknév:</td>
+                    <td headers="bemenet1"><input type="text" name="vezeteknev" style="margin-top:5px" /></td>
+                </tr>
 
-                        <tr>
-                            <td headers="nev22">E-mail:</td>
-                            <td headers="bemenet1"><input type="text" name="email" style="margin-top:5px"/></td>
-                        </tr>
+                <tr>
+                    <td headers="nev22">Keresztnév:</td>
+                    <td headers="bemenet1"><input type="text" name="keresztnev" style="margin-top:5px" /></td>
+                </tr>
 
-                        <tr>
-                            <td headers="nev22"><label for="reg-password">Jelszó:</label></td>
-                            <td headers="bemenet1"><input type="password" id="reg-password" name="reg-jelszo" style="margin-top:5px"/></td>
-                        </tr>
+                <tr>
+                    <td headers="nev22">Felhasználónév:</td>
+                    <td headers="bemenet1"><input type="text" name="felhasznalonev" style="margin-top:5px" /></td>
+                </tr>
 
-                        <tr>
-                            <td headers="nev22"><label for="reg-password">Jelszó:</label></td>
-                            <td headers="bemenet1"><input type="password" id="reg-password" name="reg-jelszo2" style="margin-top:5px"/></td>
-                        </tr>
+                <tr>
+                    <td headers="nev22">E-mail:</td>
+                    <td headers="bemenet1"><input type="text" name="email" style="margin-top:5px" /></td>
+                </tr>
 
-                    </table>
+                <tr>
+                    <td headers="nev22"><label for="reg-password">Jelszó:</label></td>
+                    <td headers="bemenet1"><input type="password" id="reg-password" name="reg-jelszo"
+                            style="margin-top:5px" /></td>
+                </tr>
 
-                    <input type="submit" name="register" value="Regisztráció" class="reg-btn">
+                <tr>
+                    <td headers="nev22"><label for="reg-password">Jelszó:</label></td>
+                    <td headers="bemenet1"><input type="password" id="reg-password" name="reg-jelszo2"
+                            style="margin-top:5px" /></td>
+                </tr>
 
-                    <input type="reset" value="Adatok törlése" class ="reg-btn">
-                </fieldset>
-            </form>
+            </table>
 
-            <?php
+            <input type="submit" name="register" value="Regisztráció" class="reg-btn">
+
+            <input type="reset" value="Adatok törlése" class="reg-btn">
+        </fieldset>
+    </form>
+
+    <?php
 					$veznev = "";
 					$kernev = "";
                     $felhnev = "";
@@ -284,8 +290,8 @@ include "functions.php";
 					
 				?>
 
-        <?php include_once "footer.php"; ?>
+    <?php include_once "footer.php"; ?>
 
-    </body>
+</body>
 
 </html>

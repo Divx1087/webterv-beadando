@@ -6,29 +6,30 @@ session_start();
 
 <!DOCTYPE html>
 <html lang="hu">
-    <head>
 
-        <meta charset="UTF-8">
-      
-        <title>Kiskakas Vendéglő</title>
-    
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
-    </head>
-    
-    <body>
-    
-        <header>
+<head>
 
-            <nav>
+    <meta charset="UTF-8">
+
+    <title>Kiskakas Vendéglő</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <nav>
 
             <div id="navbar">
 
                 <div class="logo">
 
                     <div>
-                        <img src="img/kiskakas_logo.png" alt="kiskakas_logo" class="logo">  
+                        <img src="img/kiskakas_logo.png" alt="kiskakas_logo" class="logo">
                     </div>
 
                 </div>
@@ -45,21 +46,21 @@ session_start();
                             <a href="etelek.php">Ételek</a>
                         </div>
                     </div>
-                <?php if(!isset($_SESSION["user"]) || empty($_SESSION["user"])): ?>
-                    <a href="login.php" >Belépés</a>
-                <?php else: ?>
+                    <?php if(!isset($_SESSION["user"]) || empty($_SESSION["user"])): ?>
+                    <a href="login.php">Belépés</a>
+                    <?php else: ?>
                     <a href="profil.php">Profil</a>
                     <a href="felh.php">Felhasználók</a>
                     <a href="logout.php">Kijelentkezés</a>
-                <?php endif; ?>	
+                    <?php endif; ?>
 
                 </div>
 
-                </div>
+            </div>
 
-            </nav>
+        </nav>
 
-        </header>
+    </header>
 
     <div id="tooltip">
         <img src="img/kakas-kiszallitas.jpg" alt="kiszallitas" id="fixed-img">
@@ -73,9 +74,11 @@ session_start();
                 <h1 class="rolunk-fooldal">Üdvözöljük a Kiskakas Étterem weboldalán!</h1>
 
                 <p style="text-align: center">
-                    Cegléden található éttermünk hosszú idők óta, a baráti összejövetelek, a sikeres üzleti ebédek, a meghitt családi események találkozó helye.
+                    Cegléden található éttermünk hosszú idők óta, a baráti összejövetelek, a sikeres üzleti ebédek, a
+                    meghitt családi események találkozó helye.
                     <br>
-                    Kedves kiszolgálással, megújult hangulatos belső térrel, a magyar gasztronómia legjavát összeválogatva, sok szeretettel várjuk Önt és kedves családját!
+                    Kedves kiszolgálással, megújult hangulatos belső térrel, a magyar gasztronómia legjavát
+                    összeválogatva, sok szeretettel várjuk Önt és kedves családját!
                 </p>
 
             </article>
@@ -88,9 +91,11 @@ session_start();
                 <h1 class="rolunk-fooldal">Kedves vendégeink!</h1>
 
                 <p style="text-align: center">
-                    Ételeink kiszállítását vállaljuk Cegléden és környező településeken (Törtel, Csemő, Tápiószele, Tápiószentmárton, Tápiószőlős, Ceglédbercel, Albertirsa).
+                    Ételeink kiszállítását vállaljuk Cegléden és környező településeken (Törtel, Csemő, Tápiószele,
+                    Tápiószentmárton, Tápiószőlős, Ceglédbercel, Albertirsa).
                     <br>
-                    Leterheltségünk függvényében távolabbi címekre is megpróbálunk eljutni, kérjük, hívja diszpécserünket!
+                    Leterheltségünk függvényében távolabbi címekre is megpróbálunk eljutni, kérjük, hívja
+                    diszpécserünket!
                     <br>
                     1000 Ft feletti rendeléseket díjtalanul szállítjuk környező településekre is.
                     <br>
@@ -103,7 +108,9 @@ session_start();
             <br>
 
             <div>
-                <div class="multicolumn" style="padding:32px 64px"><h3 class="rolunk-fooldal">A hely kiválóan alkalmas:</h3></div>
+                <div class="multicolumn" style="padding:32px 64px">
+                    <h3 class="rolunk-fooldal">A hely kiválóan alkalmas:</h3>
+                </div>
                 <p class="multi-newspaper">
                     céges, családi, baráti és egyéb rendezvények
                     <br>
@@ -114,7 +121,7 @@ session_start();
                     valamint állófogadásokra.
                 </p>
             </div>
-        
+
 
             <br>
             <br>
@@ -134,7 +141,7 @@ session_start();
 
 
     <?php include_once "footer.php"; ?>
-    
-    </body>
+
+</body>
 
 </html>

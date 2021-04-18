@@ -6,27 +6,28 @@ session_start();
 
 <!DOCTYPE html>
 <html lang="hu">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <title>Kiskakas Vendéglő</title>
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  </head>
+</head>
 
-  <body>
+<body>
 
-  <header>
-  
-  <nav>
+    <header>
+
+        <nav>
 
             <div id="navbar">
 
                 <div class="logo">
 
                     <div>
-                        <img src="img/kiskakas_logo.png" alt="kiskakas_logo" class="logo">  
+                        <img src="img/kiskakas_logo.png" alt="kiskakas_logo" class="logo">
                     </div>
 
                 </div>
@@ -43,74 +44,75 @@ session_start();
                             <a href="etelek.php">Ételek</a>
                         </div>
                     </div>
-                <?php if(!isset($_SESSION["user"]) || empty($_SESSION["user"])): ?>
-                    <a href="login.php" >Belépés</a>
-                <?php else: ?>
+                    <?php if(!isset($_SESSION["user"]) || empty($_SESSION["user"])): ?>
+                    <a href="login.php">Belépés</a>
+                    <?php else: ?>
                     <a href="profil.php">Profil</a>
                     <a href="felh.php">Felhasználók</a>
                     <a href="logout.php">Kijelentkezés</a>
-                <?php endif; ?>	
+                    <?php endif; ?>
 
                 </div>
 
-                </div>
+            </div>
 
-            </nav>
+        </nav>
 
-</header>
-        
-  <div>
-    
-    <img src="img/festes.jpg" alt="etterem" id ="etterem-png">
+    </header>
 
-    <div class="main-rolunk">
-        <h1 class="rolunk-fooldal">Rólunk</h1>
+    <div>
 
-        <p class="white-space">
-            Kellemes környezettel, udvarias kiszolgálással várjuk Vendégeinket az éttermünkben, 
-            emelett rendelkezünk kettő rendezvényteremmel is. 
-            Változatos étlapunkon megtalálják a magyaros és a nemzetközi konyha különleges ízeit is. 
-            A legfiatalabbak gyermek étlapról választhatnak.
-            Éttermünk teraszára magával hozhatja házi kedvencét is.
-        </p>
-        
-        <br>
-        <br>
+        <img src="img/festes.jpg" alt="etterem" id="etterem-png">
 
-        <p class="white-space">
-            Fizethetnek készpénzzel, meleg étkezési utalvánnyal, bankkártyával és a szerződéses partnerek átutalással.
-            Ingyenes internetet biztosítunk vendégeink részére, ha lemerült a telefonja kérje kollegáink segítségét. 
-            Rendelkezünk a legtöbb telefon feltöltéséhez szükséges adat kábellel és powerbankal.
-        </p>
+        <div class="main-rolunk">
+            <h1 class="rolunk-fooldal">Rólunk</h1>
 
-        <h1 class="rolunk-fooldal">Galéria</h1>
+            <p class="white-space">
+                Kellemes környezettel, udvarias kiszolgálással várjuk Vendégeinket az éttermünkben,
+                emelett rendelkezünk kettő rendezvényteremmel is.
+                Változatos étlapunkon megtalálják a magyaros és a nemzetközi konyha különleges ízeit is.
+                A legfiatalabbak gyermek étlapról választhatnak.
+                Éttermünk teraszára magával hozhatja házi kedvencét is.
+            </p>
 
-        <table id="rolunk-table">
+            <br>
+            <br>
 
-            <tr>
+            <p class="white-space">
+                Fizethetnek készpénzzel, meleg étkezési utalvánnyal, bankkártyával és a szerződéses partnerek
+                átutalással.
+                Ingyenes internetet biztosítunk vendégeink részére, ha lemerült a telefonja kérje kollegáink segítségét.
+                Rendelkezünk a legtöbb telefon feltöltéséhez szükséges adat kábellel és powerbankal.
+            </p>
 
-                <td class="disp-table">
+            <h1 class="rolunk-fooldal">Galéria</h1>
 
-                    <a href="rendezvenyek.php" id="rendezvenyek-btn"><b>Rendezvények</b></a>
+            <table id="rolunk-table">
 
-                </td>
+                <tr>
 
-                <td class="disp-table">
+                    <td class="disp-table">
 
-                    <a href="etelek.php" id="etelek-btn"><b>Ételek</b></a>
+                        <a href="rendezvenyek.php" id="rendezvenyek-btn"><b>Rendezvények</b></a>
 
-                </td>
+                    </td>
 
-            </tr>
+                    <td class="disp-table">
 
-        </table>        
+                        <a href="etelek.php" id="etelek-btn"><b>Ételek</b></a>
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </div>
 
     </div>
 
-  </div>
+    <?php include_once "footer.php"; ?>
 
-  <?php include_once "footer.php"; ?>
-
-  </body>
+</body>
 
 </html>

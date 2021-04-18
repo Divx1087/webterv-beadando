@@ -11,70 +11,71 @@ if((!isset($_SESSION["user"])) || empty($_SESSION["user"])){
 
 <!DOCTYPE html>
 <html lang="hu">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <title>Kiskakas Vendéglő</title>
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  </head>
+</head>
 
-  <body>
+<body>
 
-  <header>
-  
-  <nav>
+    <header>
 
-  <div id="navbar">
+        <nav>
 
-<div class="logo">
+            <div id="navbar">
+
+                <div class="logo">
+
+                    <div>
+                        <img src="img/kiskakas_logo.png" alt="kiskakas_logo" class="logo">
+                    </div>
+
+                </div>
+
+                <div id="links">
+                    <a href="index.php">Főoldal</a>
+                    <a href="rolunk.php">Rólunk</a>
+                    <a href="etlap.php">Étlap</a>
+                    <a href="itallap.php">Itallap</a>
+                    <div class="dropdown">
+                        <button class="dropbtn"><b>Galéria</b></button>
+                        <div class="dropdown-content">
+                            <a href="rendezvenyek.php">Rendezvények</a>
+                            <a href="etelek.php">Ételek</a>
+                        </div>
+                    </div>
+                    <?php if(!isset($_SESSION["user"]) || empty($_SESSION["user"])): ?>
+                    <a href="login.php">Belépés</a>
+                    <?php else: ?>
+                    <a href="profil.php" class="active-nav">Profil</a>
+                    <a href="felh.php">Felhasználók</a>
+                    <a href="logout.php">Kijelentkezés</a>
+                    <?php endif; ?>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
 
     <div>
-        <img src="img/kiskakas_logo.png" alt="kiskakas_logo" class="logo">  
-    </div>
-
-</div>
-
-<div id="links">
-    <a href="index.php">Főoldal</a>
-    <a href="rolunk.php">Rólunk</a>
-    <a href="etlap.php">Étlap</a>
-    <a href="itallap.php">Itallap</a>
-    <div class="dropdown">
-        <button class="dropbtn"><b>Galéria</b></button>
-        <div class="dropdown-content">
-            <a href="rendezvenyek.php">Rendezvények</a>
-            <a href="etelek.php">Ételek</a>
-        </div>
-    </div>
-  <?php if(!isset($_SESSION["user"]) || empty($_SESSION["user"])): ?>
-      <a href="login.php" >Belépés</a>
-  <?php else: ?>
-      <a href="profil.php" class="active-nav">Profil</a>
-      <a href="felh.php">Felhasználók</a>
-      <a href="logout.php">Kijelentkezés</a>
-  <?php endif; ?>	
-
-</div>
-
-</div>
-
-    </nav>
-
-</header>
-        
-    <div>
-    
 
 
-    <form action="profil.php" method="post" enctype="multipart/form-data">
-      Select image to upload:
-      <input type="file" name="profkep" id="profkep">
-      <input type="submit" value="Upload Image" name="feltoltes">
-    </form>
-    
-    <?php
+
+        <form action="profil.php" method="post" enctype="multipart/form-data">
+            Select image to upload:
+            <input type="file" name="profkep" id="profkep">
+            <input type="submit" value="Upload Image" name="feltoltes">
+        </form>
+
+        <?php
 
       if (array_key_exists("profkep",$_FILES)) {
         $target_dir = "profilkep/";
@@ -118,10 +119,10 @@ if((!isset($_SESSION["user"])) || empty($_SESSION["user"])){
 
     </div>
 
-  </div>
+    </div>
 
-  <?php include_once "footer.php"; ?>
+    <?php include_once "footer.php"; ?>
 
-  </body>
+</body>
 
 </html>
