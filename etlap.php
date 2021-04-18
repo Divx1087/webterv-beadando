@@ -21,39 +21,41 @@ if((!isset($_SESSION["user"])) || empty($_SESSION["user"])){
   
   <nav>
 
-      <div id="navbar">
+            <div id="navbar">
 
-          <div class="logo">
+                <div class="logo">
 
-              <div>
-                  <img src="img/kiskakas_logo.png" alt="kiskakas_logo" class="logo">  
-              </div>
+                    <div>
+                        <img src="img/kiskakas_logo.png" alt="kiskakas_logo" class="logo">  
+                    </div>
 
-          </div>
+                </div>
 
-          <div id="links">
-              <a href="index.php">Főoldal</a>
-              <a href="rolunk.php">Rólunk</a>
-              <a href="etlap.php" class="active-nav">Étlap</a>
-              <a href="itallap.php">Itallap</a>
-              <div class="dropdown">
-                  <button class="dropbtn"><b>Galéria</b></button>
-                  <div class="dropdown-content">
-                      <a href="rendezvenyek.php">Rendezvények</a>
-                      <a href="etelek.php">Ételek</a>
-                  </div>
-              </div>
-            <?php if(!isset($_SESSION["user"]) || empty($_SESSION["user"])): ?>
-                <a href="login.php" >Belépés</a>
-            <?php else: ?>
-                <a href="logout.php">Kijelentkezés</a>
-  <?php endif; ?>	
+                <div id="links">
+                    <a href="index.php">Főoldal</a>
+                    <a href="rolunk.php">Rólunk</a>
+                    <a href="etlap.php" class="active-nav">Étlap</a>
+                    <a href="itallap.php">Itallap</a>
+                    <div class="dropdown">
+                        <button class="dropbtn"><b>Galéria</b></button>
+                        <div class="dropdown-content">
+                            <a href="rendezvenyek.php">Rendezvények</a>
+                            <a href="etelek.php">Ételek</a>
+                        </div>
+                    </div>
+                <?php if(!isset($_SESSION["user"]) || empty($_SESSION["user"])): ?>
+                    <a href="login.php" >Belépés</a>
+                <?php else: ?>
+                    <a href="profil.php">Profil</a>
+                    <a href="felh.php">Felhasználók</a>
+                    <a href="logout.php">Kijelentkezés</a>
+                <?php endif; ?>	
 
-          </div>
+                </div>
 
-      </div>
+                </div>
 
-  </nav>
+            </nav>
 
 </header>
   <div class="main">

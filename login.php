@@ -49,6 +49,7 @@ include "functions.php";
                         <a href="login.php" class="active-nav">Belépés</a>
                     <?php else: ?>
                         <a href="profil.php">Profil</a>
+                        <a href="felh.php">Felhasználók</a>
                         <a href="logout.php">Kijelentkezés</a>
 					<?php endif; ?>	
   
