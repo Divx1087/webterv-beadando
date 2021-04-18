@@ -184,7 +184,7 @@ include "functions.php";
 
                 <tr>
                     <td headers="nev22"><label for="reg-password">Jelszó:</label></td>
-                    <td headers="bemenet1"><input type="password" id="reg-password" name="reg-jelszo2"
+                    <td headers="bemenet1"><input type="password" id="reg-password2" name="reg-jelszo2"
                             style="margin-top:5px" /></td>
                 </tr>
 

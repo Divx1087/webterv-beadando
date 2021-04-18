@@ -103,8 +103,6 @@ if((!isset($_SESSION["user"])) || empty($_SESSION["user"])){
 
     </div>
 
-    </div>
-
     <?php include_once "footer.php"; ?>
 
 </body>

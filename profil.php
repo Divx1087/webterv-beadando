@@ -67,8 +67,6 @@ if((!isset($_SESSION["user"])) || empty($_SESSION["user"])){
 
     <div>
 
-
-
         <form action="profil.php" method="post" enctype="multipart/form-data">
             Select image to upload:
             <input type="file" name="profkep" id="profkep">
@@ -116,8 +114,6 @@ if((!isset($_SESSION["user"])) || empty($_SESSION["user"])){
       }
 
     ?>
-
-    </div>
 
     </div>
 
