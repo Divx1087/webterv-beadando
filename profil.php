@@ -75,7 +75,7 @@ if((!isset($_SESSION["user"])) || empty($_SESSION["user"])){
 
         <?php
 
-      if (array_key_exists("profkep",$_FILES)) {
+        if (array_key_exists("profkep",$_FILES)) {
         $target_dir = "profilkep/";
         $target_file = $target_dir . basename($_FILES["profkep"]["name"]);
         $uploadOk = 1;
