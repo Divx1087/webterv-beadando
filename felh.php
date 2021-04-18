@@ -74,7 +74,7 @@ if((!isset($_SESSION["user"])) || empty($_SESSION["user"])){
         if(array_key_exists('kereses', $_GET) && boolval($_GET['kereses'])) {
             $keresesStr = $_GET['kereses'];
             $felhasznalok = array_filter($felhasznalok, function($felhasznalo) use($keresesStr){
-                return strpos($felhasznalo['vezeteknev'], $keresesStr) !== false || strpos($felhasznalo['keresztnev'], $keresesStr) || strpos($felhasznalo['email'], $keresesStr);
+                return strpos($felhasznalo['vezeteknev'], $keresesStr) !== false || strpos($felhasznalo['keresztnev'], $keresesStr) !== false || strpos($felhasznalo['email'], $keresesStr);
             });
         }
             
@@ -84,7 +84,7 @@ if((!isset($_SESSION["user"])) || empty($_SESSION["user"])){
         <form action="felh.php" method="GET">
             <label>Felhasználók keresése</label>
             <input type="text" name="kereses" <?php echo(isset($keresesStr) ? "value=$keresesStr" : "")?>
-                placeholder="Név vagy email">
+                placeholder="Adjon meg egy nevet">
             <button>Beküldés</button>
         </form>
 
