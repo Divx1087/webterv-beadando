@@ -268,6 +268,18 @@ include "functions.php";
                             $hiba[] = "A két jelszó nem egyezik meg!";
                         }
 
+                        if(preg_match('/[0-9]/', $veznev)){
+                            $hiba[] = "A vezetéknévben nem szerepelhetnek számok!";
+                        }
+
+                        if(preg_match('/[0-9]/', $kernev)){
+                            $hiba[] = "A vezetéknévben nem szerepelhetnek számok!";
+                        }
+
+                        if(!preg_match('/[@]/', $emailc) || !preg_match('/[.]/', $emailc)){
+                            $hiba[] = "Rosszul írtad be az e-mail címed!";
+                        }
+
                         if(count($hiba) === 0){
 							echo "Sikeres regisztráció!" . "<br/>";
 							$newuser = [

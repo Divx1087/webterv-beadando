@@ -66,15 +66,49 @@ if((!isset($_SESSION["user"])) || empty($_SESSION["user"])){
     </header>
 
     <div>
+        <?php
+            $profilkep = "profilkep/default.jpg";
+            $utvonal = "profilkep/" . $_SESSION["user"]["felhasznalonev"];
+            $kiterjesztesek = ["png", "jpg", "jpeg"];
 
-        <form action="profil.php" method="post" enctype="multipart/form-data">
-            Select image to upload:
-            <input type="file" name="profkep" id="profkep">
-            <input type="submit" value="Upload Image" name="feltoltes">
-        </form>
+            foreach ($kiterjesztesek as $kiterjesztes) {
+                if (file_exists($utvonal . "." . $kiterjesztes)) {
+                    $profilkep = $utvonal . "." . $kiterjesztes;
+                }
+            }
+        ?>
+
+        <div>
+            <img src="<?php echo $profilkep; ?>" alt="Profilkep" width="200">
+            <?php if ($_SESSION["user"]["felhasznalonev"] !== "default") { ?>
+                <form action="profil.php" method="POST" enctype="multipart/form-data">
+                Válassz ki egy képet:
+                <input type="file" name="profile-pic" accept="image/*">
+                <input type="submit" value="Profilkép módosítása" name="upload-btn">
+            </form>
+            <?php } ?>
+        </div>
 
         <?php
 
+            if (isset($_POST["upload-btn"]) && is_uploaded_file($_FILES["profile-pic"]["tmp_name"])) {
+                $error = ""; 
+                uploadProfilePicture($_SESSION["user"]["felhasznalonev"]);
+
+                $kit = strtolower(pathinfo($_FILES["profile-pic"]["name"], PATHINFO_EXTENSION));
+                $utvonal = "profilkep/" . $_SESSION["user"]["felhasznalonev"] . "." . $kit;
+
+                if ($error === "") {
+                    if ($utvonal !== $profilkep && $profilkep !== "profilkep/default.jpg") {
+                        unlink($profilkep);
+                    }
+
+                    header("Location: profil.php");
+                } else {
+                    echo "<p>" . $error . "</p>";
+                }
+            }
+/*
         if (array_key_exists("profkep",$_FILES)) {
         $target_dir = "profilkep/";
         $target_file = $target_dir . basename($_FILES["profkep"]["name"]);
@@ -101,6 +135,14 @@ if((!isset($_SESSION["user"])) || empty($_SESSION["user"])){
           $uploadOk = 0;
         }
 
+        $user_pic = $_FILES["profkep"]["name"];
+        $default = "img/default.jpg";
+
+        if(file_exists($user_pic)){
+            $profile_picture = $user_pic;
+        } else {
+            $profile_picture = $default;
+        }
 
         if ($uploadOk == 0) {
           echo "A fájl nem lett feltöltve.";
@@ -112,7 +154,7 @@ if((!isset($_SESSION["user"])) || empty($_SESSION["user"])){
           }
         }
       }
-
+*/
     ?>
 
     </div>
